@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Servidor web desde ESP8266</title>
+</head>
+<body>
+    <h1>Servidor web desde ESP8266</h1>
+    <h2>ENCENDER LED:</h2>
+    <button id="encender">Encender</button>
+    <button id="apagar">Apagar</button>
+
+    <script>
+        document.getElementById('encender').addEventListener('click', function () {
+            window.location.href = "/controlador?LED=ENCENDIDO";
+        });
+
+        document.getElementById('apagar').addEventListener('click', function () {
+            window.location.href = "/controlador?LED=APAGADO";
+        });
+    </script>
+</body>
+</html>
