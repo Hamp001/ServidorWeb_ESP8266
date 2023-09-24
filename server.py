@@ -17,17 +17,17 @@ def controlar_led(estado):
 def handle_request(conn):
     conn.send('HTTP/1.1 200 OK\n')
     conn.send('Content-Type: text/html\n')
+    #encabezado Content-Length que indica la longitud del contenido HTML que se enviará.
+    conn.send('Content-Length: {}\n'.format(len(contenido_html)))
     conn.send('\n')
-    
     request=conn.recv(1024)
     request=str(request)
     # Comprueba si la solicitud contiene "ON" o "OFF"
-    if '/controlador?LED=ENCENDIDO' in request:
+    if "/controlador?LED=ENCENDIDO" in request:
         controlar_led(0)
-    elif '/controlador?LED=APAGADO' in request:
+    elif "/controlador?LED=APAGADO" in request:
         controlar_led(1)
-
-    conn.send(contenido_html)
+    conn.sendall(contenido_html)
     conn.close()
 
 def runServer():

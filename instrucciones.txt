@@ -42,5 +42,10 @@ se quiere configurar en el script
 NOTA: Es posible que por los recursos limitados del esp8266 solo pueda acceder un cliente a la vez
 recargar pagina constantemente
 
-	
-                                           
+
+-----------------------------------------------------------------------------------------------------
+NOTA utilizar .mpy antes que .py 
+
+los archivos .mpy son mas ligeros y se ejecutan mas rapido que los .py
+
+mpy-cross archivo.py (genera un .mpy)

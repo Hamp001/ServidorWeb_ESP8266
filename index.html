@@ -2,20 +2,54 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <style>
+        h1{
+            font: bold;
+            font-family: 'Arial';
+            font-size: xx-large;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+        }
+        .encender, .apagar {
+            height: 250px;
+            width: 600px;
+            font: bold 80px 'Arial';
+            color: aliceblue;
+            border: none;
+            border-radius: 50px;
+        }
+        .encender {
+            background-color: rgba(125, 220, 66, 0.806);
+        }
+        .apagar {
+            background-color: rgba(245, 22, 22, 0.993);
+        }
+       .apagar:hover,.encender:hover{
+        background-color: cadetblue;
+       }
+    </style>
+    
     <title>Servidor web desde ESP8266</title>
 </head>
 <body>
-    <h1>Servidor web desde ESP8266</h1>
-    <h2>ENCENDER LED:</h2>
-    <button id="encender">Encender</button>
-    <button id="apagar">Apagar</button>
-
+    <form>
+        <h1>ENCENDER LED:</h1>
+        <button id="encender" class="encender">Encender</button>
+        <br><br>
+        <button id="apagar" class="apagar">Apagar</button>
+    </form>
     <script>
-        document.getElementById('encender').addEventListener('click', function () {
+        document.getElementById("encender").addEventListener('click', function (e) {
+            e.preventDefault(); // Evita el envío del formulario por defecto
             window.location.href = "/controlador?LED=ENCENDIDO";
         });
 
-        document.getElementById('apagar').addEventListener('click', function () {
+        document.getElementById("apagar").addEventListener('click', function (e) {
+            e.preventDefault(); // Evita el envío del formulario por defecto
             window.location.href = "/controlador?LED=APAGADO";
         });
     </script>
