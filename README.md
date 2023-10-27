@@ -1,5 +1,6 @@
 # ServidorWeb_ESP8266
 https://docs.micropython.org/en/v1.20.0/esp8266/tutorial/intro.html#intro
+
 1.pip install esptool
 2.conocer puerto com que se le asigno a la placa (conectar esp8266)
 	-administrador de dispositivos
